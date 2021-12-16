@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Статья | Coffee </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Coffee" /> 
+<meta name="keywords" content="Coffee" /> 
+<meta name="author" content="IDB-19-07" /> 
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body id="page8">
+   <!-- header -->
+   <div id="header">
+      <div class="container">
+         <div class="wrapper">
+            <ul class="top-links">
+               <li><a href="index.html" class="first"><img alt="" src="images/icon-home.gif" /></a></li>
+               <li><a href="contact-us.html"><img alt="" src="images/icon-mail.gif" /></a></li>
+               <li><a href="sitemap.html"><img alt="" src="images/icon-map.gif" /></a></li>
+            </ul>
+            <div class="logo">
+               <h1><a href="index.html">Coffee</a><span>Сайт для любителей кофе</span></h1>
+            </div>
+         </div>
+         <ul class="nav">
+            <li><a href="index.html" class="first">Главная</a></li>
+            <li><a href="about-us.html">О нас</a></li>
+            <li><a href="articles.html" class="current">Статьи</a></li>
+            <li><a href="contact-us.html">Контакты</a></li>
+            <li><a href="sitemap.html">Карта сайта</a></li>
+         </ul>
+      </div>
+   </div>
+   <!-- content -->
+   <div id="content">
+      <div class="container">
+         <div class="inside">
+            <!-- box begin -->
+            <div class="box alt">
+            	<div class="left-top-corner">
+               	<div class="right-top-corner">
+                  	<div class="border-top"></div>
+                  </div>
+               </div>
+               <div class="border-left">
+               	<div class="border-right">
+                  	<div class="inner">
+                     	<h1>Опросник для любителей кофе</h1>
+                     	<div class="img-box">
+							<section class="main">
+
+<form name="quiz" action="javascript:check();" class="quizform">
+
+<div class="quizsection">
+
+
+	<h2>Вопрос #1</h2>
+	Наиболее распространённый вид кофе это:<br />
+	<div class="answer">
+		<input name="q1" value="value2" id="value1" type="radio" checked="checked" /> Арабика
+	</div>
+
+	<div class="answer">
+		<input name="q1" value="value1" id="value2" type="radio" /> Робуста
+	</div>
+
+	<div class="answer">
+		<input name="q1" value="value1" id="value3" type="radio" /> Либерика
+	</div>
+
+	<div class="answer">
+		<input name="q1" value="value1" id="value4" type="radio" /> Эксцельса
+	</div>
+
+</div>
+
+<div class="quizsection">
+
+	<h2>Вопрос #2</h2>
+	Что из перечисленного не является кофейным напитком:<br />
+	<div class="answer">
+		<input name="q2" value="value1" id="value1" type="radio" checked="checked" /> Экспрессо
+	</div>
+
+	<div class="answer">
+		<input name="q2" value="value2" id="value2" type="radio" /> Улун
+	</div>
+
+	<div class="answer">
+		<input name="q2" value="value1" id="value3" type="radio" /> Гляссе
+	</div>
+
+	<div class="answer">
+		<input name="q2" value="value1" id="value4" type="radio" /> Лунго
+	</div>
+
+</div>
+
+<div class="quizsection">
+
+	<h2>Вопрос #3</h2>
+	Родина кофе это:
+	<div class="answer">
+		<input name="q3" value="value1" id="value1" type="radio" checked="checked" /> Бразилия
+	</div>
+
+	<div class="answer">
+		<input name="q3" value="value1" id="value2" type="radio" /> Сомали
+	</div>
+
+	<div class="answer">
+		<input name="q3" value="value2" id="value3" type="radio" /> Эфиопия
+	</div>
+
+	<div class="answer">
+		<input name="q3" value="value1" id="value4" type="radio" /> Испания
+	</div>
+
+</div>
+
+<input value="Отправить" type="submit" /> <input value="Сброс" type="reset" />
+
+</form>
+
+</section>
+
+<script type="text/javascript">// <![CDATA[
+
+   var result;
+   
+   function check()
+
+   {
+
+      var question;
+      var value1;
+      var value2;
+      
+      
+      question = 1;
+      value1 = 0;
+      value2 = 0;
+      
+      
+      result = "";
+
+      var choice;
+      
+      for (question = 1; question <= 3; question++) {
+      
+         var q = document.forms['quiz'].elements['q'+question];
+
+            for (var i = 0; i < q.length; i++) {
+               if (q[i].checked) {
+                  choice = q[i].value;
+               }
+            }
+
+            if (choice == "value1") {
+               value1++;
+            }
+
+            if (choice == "value2") {
+               value2++;
+            }
+
+
+         }
+
+      if (value2 == 0) {
+
+         // Нет правильных ответов
+         result = "opros0";
+
+      }
+
+      else if (value2 == 1) {
+
+         // Один правильный ответ
+         result = "opros1";
+
+      }
+
+      else if (value2 == 2) {
+
+         // Два правильных ответа
+         result = "opros2";
+
+      }
+
+      else if (value2 == 3) {
+
+         // Три правильных ответа
+         result = "opros3";
+
+      }
+
+
+      else {
+         result = "404";
+      }
+
+      window.location = result + '.html';
+
+   }
+
+// ]]></script>
+
+                        </div>
+					</div>
+                  </div>
+               </div>
+               <div class="left-bot-corner">
+               	<div class="right-bot-corner">
+                  	<div class="border-bot"></div>
+                  </div>
+               </div>
+            </div>
+            <!-- box end -->
+         </div>
+      </div>
+   </div>
+   <!-- footer -->
+   <div id="footer">
+      <div class="container">
+         <div class="indent">
+            <div class="fright">©Copyrights - ФИО ИДБ-19-07</div>
+         </div>
+      </div>
+   </div>
+</body>
+</html>
